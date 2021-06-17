@@ -448,11 +448,13 @@ p {
 }
 .decor__231 {
   position: absolute !important;
+  z-index: -3 !important;
   right: -5%;
   margin-top: 8em;
 }
 .decor__232 {
   position: absolute !important;
+  z-index: -3 !important;
   left: -5%;
   margin-top: 30em;
 }
