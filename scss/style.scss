@@ -69,7 +69,7 @@ p{
     &--right{
       top:0.25em;
       left: auto;
-      margin: 0 0.5em;
+      margin: 0 0.1em;
     }
     &--light{
       color: $gray;
@@ -722,6 +722,9 @@ p{
 }
 //Tablet
 @media (min-width: 768px){
+  .counter--right{
+    margin: 0 0.5em;
+  }
   .decor{
     &__231{
       right: -58.5%;
