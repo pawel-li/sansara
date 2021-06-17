@@ -112,11 +112,12 @@ p {
   top: 0;
   line-height: 1.6;
   left: -1.5em;
+  margin: 0 0;
+  width: 0%;
 }
 .counter--right {
   top: 0.25em;
   left: auto;
-  margin: 0 0.1em;
 }
 .counter--light {
   color: #bab8ac;
@@ -783,6 +784,7 @@ p {
 @media (min-width: 768px) {
   .counter--right {
     margin: 0 0.5em;
+    width: auto;
   }
 
   .decor__231 {

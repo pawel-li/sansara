@@ -66,10 +66,11 @@ p{
     top: 0;
     line-height: 1.6;
     left: -1.5em;
+    margin: 0 0;
+    width: 0%;
     &--right{
       top:0.25em;
       left: auto;
-      margin: 0 0.1em;
     }
     &--light{
       color: $gray;
@@ -724,6 +725,7 @@ p{
 @media (min-width: 768px){
   .counter--right{
     margin: 0 0.5em;
+    width: auto;
   }
   .decor{
     &__231{
