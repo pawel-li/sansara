@@ -1,5 +1,5 @@
 # sansara
 https://pawel-li.github.io/sansara/
 
-To do's:
+To do's:<br />
 add all blobs
