@@ -246,7 +246,7 @@ p{
     display: none;
   }
   &__logo{
-    height: 65%;
+    height: 3.25em;
     width: auto;
   }
   .lang{
@@ -307,7 +307,7 @@ p{
   }
   &__h1{
     font-size: 3em;
-    margin:0;
+    margin: 0.5em;
     font-weight: bold;
     span{
       display: inline-block;
@@ -398,7 +398,7 @@ p{
   &__231{
     position: absolute!important;
     z-index: -3!important;
-    right: -5%;
+    right: -5.5%;
     margin-top: 8em;
   }
   &__232{
@@ -468,9 +468,20 @@ p{
     margin: auto;
   }
 }
-.wrap{
-  display: grid;
-  place-items: center;
+.item{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  &__imgblock{
+    display: grid;
+    place-items: center;
+  }
+  &__img{
+    position: relative;
+    margin: 0 auto;
+    max-width: 75vw;
+  }
   .decor{
     position: relative;
     z-index: 1;
@@ -482,17 +493,6 @@ p{
       top: -3em;
       right: -8em;
     }
-  }
-  &__h2,
-  &__p{
-    margin:0;
-    position: relative;
-    justify-self: baseline;
-  }
-  &__img{
-    position: relative;
-    margin: 0 auto;
-    max-width: 75vw;
   }
   &__h2{
     place-self: start;
@@ -507,6 +507,21 @@ p{
       background-color: $black;
       margin: 0.5em auto 0.5em 0;
     }
+  }
+}
+.about{
+  display: grid;
+  place-items: center;
+  &__h2,
+  &__p{
+    margin:0;
+    position: relative;
+    justify-self: baseline;
+  }
+  &__img{
+    position: relative;
+    margin: 0 auto;
+    max-width: 75vw;
   }
 }
 .people{
@@ -600,26 +615,26 @@ p{
 
     }
 }
-.floating{
-  &__box{
+.floatingbox{
     width: 100%;
     padding: 3em;
     box-sizing: border-box;
-    margin: 2em auto;
+    margin: 1.5em auto;
     text-align: center;
     background-color: $floatingBoxColor;
     text-transform: uppercase;
-    h1{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.09), 0 6px 6px rgba(0,0,0,0.11);
+    &__h1{
       position: relative;
       line-height: 1.6;
     }
     &--dark{
       background-color: #86857d;
-      p,h1{
+      .floatingbox__p,
+      .floatingbox__h1{
         color:$white;
       }
     }
-  }
 }
 .email{
   background-color: rgba(255,255,255,0.75);
@@ -630,14 +645,36 @@ p{
   &__form{
     display: flex;
     flex-direction: column;
+    label{
+      display: none;
+    }
+
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $black;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+      color: $black;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+      color: $black;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+      color: $black;
+    }
+    textarea{
+      resize: vertical;
+    }
     input, textarea{
+      display: block;
       color: $black;
       text-align: center;
       background: transparent;
       border: none;
-      padding: 0.75em 0;
+      padding:0.75em;
+      margin-bottom: 0.75em;
       border-bottom: 1px solid;
       &[type=submit]{
+        cursor: pointer;
         background-color: $gray;
         color: $white;
         margin: 2em auto;
@@ -664,7 +701,7 @@ p{
 }
 .decor__footer{
   position: absolute;
-  bottom: -1em;
+  bottom: -12em;
   left: 5%;
   z-index: -1;
   max-width: 100%;
@@ -680,17 +717,17 @@ p{
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
+  margin-top: 12em;
   &__logo{
     filter: invert(1);
     margin:1em auto;
-    height: 2.5em;
+    height: 4em;
     &--john{
       filter: none;
+      height: 3em;
     }
   }
-  &__item{
-    margin:1.5em auto;
-    ul{
+  &__menu{
       display: flex;
       flex-direction: column;
       padding: 0;
@@ -718,6 +755,8 @@ p{
         }
       }
     }
+  &__item{
+    margin:0.5em auto;
   }
 }
 .group__logo{
@@ -729,19 +768,8 @@ p{
     margin: 0 0.5em;
     width: auto;
   }
-  .decor{
-    &__231{
-      right: -58.5%;
-    }
-    &__232{
-      left: -58.5%;
-    }
-  }
   .top{
     padding: 2em 6em;
-    &__logo{
-      height: 3em;
-    }
     .social{
       display: block;
     }
@@ -757,13 +785,14 @@ p{
     &__img{
       width: 30em;
       position: absolute;
+      bottom:1em;
     }
     &__scroll{
       margin-top: 3em;
     }
   }
   .container{
-    margin: 3em auto;
+    margin: 4em auto;
     flex-direction: row;
     justify-content: center;
     &--column{
@@ -776,59 +805,85 @@ p{
       width: 50%;
     }
   }
+.item{
+  flex-direction: row;
+  width: 90vw;
+  align-items: flex-start;
+  margin:1.75em auto;
+  justify-content: space-around;
+  &:nth-child(even){
+    flex-direction: row-reverse;
+  }
+  &__textblock{
+    width: 15em;
+    margin: 2em;
+  }
+}
+.about__img{
+  width: 30vw;
+}
+.group{
+  padding: 0 1em;
+}
+.textgallery{
+  padding: 2em 4em;
+  &__next{
+    right: 1.125em;
+  }
+}
+.floatingbox{
+  position: relative;
+  width: 45vw;
+  right: -1em;
+  top:-1em;
+  &--dark{
+    top: 1em;
+    left: -1em;
+  }
+}
+.email{
+  width: 22em;
+}
+.footer{
+  &__menu{
+    flex-direction: row;
+  }
+  &__logo{
+    height: 5em;
+    &--john{
+      height: 4.25em;
+    }
+  }
+}
 }
 //laptops
 @media (min-width: 1025px){
-  .wrap,
-  .people{
+  .people,
+  .about{
     width: 22em;
   }
   .people{
     place-self: auto;
   }
-  .floating{
-    display: flex;
-    width: 80%;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10em;
-    &__box{
-    width: 40vw;
+  .floatingbox{
+    width: 36em;
     padding: 3em;
     box-sizing: border-box;
     margin: 2em 0;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.09), 0 6px 6px rgba(0,0,0,0.11);
-      &--dark{
-        position: absolute;
-        right: 0;
-        bottom: -9em;
-        width: 24vw;
-      }
+    top: -3em;
+    &--dark{
+      top: 1.5em;
     }
   }
   .decor{
-    &__36 {
-      left: -20%;
-      bottom: -8em;
-    }
-    &__110{
-      z-index: 1;
+    &__36{
+      left:16.5%;
     }
     &__231{
-      right: -47.5%;
+      right: -16.5%;
     }
     &__232{
-      left: -148%;
-      top: 14em;
-    }
-    &__261{
-      right: -180%;
-      bottom: -17em;
-    }
-    &__240{
-      right: -188%;
-      bottom: 1em;
+      left: -16.5%;
     }
     &__footer{
       bottom: -20em;
@@ -889,38 +944,21 @@ p{
       width: 36em;
       bottom: 0;
     }
-    &__scroll{
-      margin-top: 5em;
-    }
   }
 
   .container{
     margin: 0 auto 4em auto;
     width: 75%;
-    &__h1{
-      font-size: 4.5em;
-    }
-    &__item{
-      display: flex;
-      flex-direction: row;
-      align-content: center;
-      justify-content: center;
-      width: 90%;
-      margin:1em auto;
-      &:nth-child(even){
-        flex-direction: row-reverse;
-      }
-      .wrap{
-        width: 14em;
-        img{
-          height: auto;
-        }
-      }
-    }
     &__50{
       display: grid;
       place-items: center;
     }
+      &__h1{
+        font-size: 4.5em;
+      }
+  }
+  .about__img{
+    width: 25em;
   }
   .textgallery{
     flex-direction: row;
@@ -950,6 +988,26 @@ p{
       right:1.5em;
     }
   }
+  .item{
+    width: 100%;
+    margin:0.5em auto;
+    justify-content: flex-start;
+    &:nth-child(even) {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+    &:nth-child(2){
+      flex-direction: row-reverse;
+      justify-content: end;
+    }
+    &__p{
+      font-size: 1.15em;
+    }
+    &__textblock{
+      width: 17em;
+      margin: 1em 3em;
+    }
+  }
   .group__logo{
     width: 20em;
     margin: 2em;
@@ -962,13 +1020,33 @@ p{
     .social{
       margin:0 2em;
     }
+    &__logo{
+      height: 3.25em;
+      &--john{
+        height: 3em;
+      }
+    }
     &__item{
       display: flex;
       margin: auto;
-      ul{
-        flex-direction: row;
-      }
     }
+  }
+}
+
+@media (min-width: 1920px){
+  p, input{
+    font-size: 1.25em;
+  }
+  .container{
+    width: 70%;
+    max-width: 90em;
+    .people, .about{
+      width: 24em;
+    }
+  }
+  .textgallery{
+    width: 90%;
+    margin: auto;
   }
 }
 //animations
