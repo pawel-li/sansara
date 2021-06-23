@@ -43,12 +43,12 @@ document.addEventListener('DOMContentLoaded', function(event){
 })
 
 function scrollApear(){
-  let containers = document.querySelectorAll(".container__50");
+  let containers = document.querySelectorAll(".scrolled");
   containers.forEach((container, i) => {
     let conPosition = container.getBoundingClientRect().top;
     let screenPosition = window.innerHeight /1.3;
     if(conPosition<screenPosition){
-      container.classList.add('container__50--show');
+      container.classList.add('scrolled--show');
     }
   });
 

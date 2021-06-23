@@ -398,13 +398,13 @@ p{
   &__231{
     position: absolute!important;
     z-index: -3!important;
-    right: -5.5%;
+    right: -11.5%;
     margin-top: 8em;
   }
   &__232{
     position: absolute!important;
     z-index: -3!important;
-    left: -5%;
+    left: -11.5%;
     margin-top: 30em;
   }
   &__240{
@@ -443,13 +443,6 @@ p{
   &__50{
     width: 100%;
     margin:1em auto;
-    opacity: 0;
-    transform: translateY(-0.5em);
-    transition: all 0.75s;
-    &--show{
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
   &__h1{
     font-size: 3em;
@@ -822,6 +815,11 @@ p{
 .about__img{
   width: 30vw;
 }
+.decor{
+  &__231{
+    right: -5.5%;
+  }
+}
 .group{
   padding: 0 1em;
 }
@@ -877,7 +875,7 @@ p{
   }
   .decor{
     &__36{
-      left:16.5%;
+      left:-16.5%;
     }
     &__231{
       right: -16.5%;
@@ -1050,6 +1048,15 @@ p{
   }
 }
 //animations
+.scrolled{
+  opacity: 0;
+  transform: translateY(-0.5em);
+  transition: all 0.75s;
+  &--show{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes text-animation {
   0%   {  transform: translateX(0.22em); opacity:0;}
   100% {   transform: translateX(0); opacity:1;}
